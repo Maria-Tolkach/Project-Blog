@@ -1,0 +1,21 @@
+//- Реализуем через массив с объектами, в итоге у нас будут три переменных, каждая переменная будет описывать каждую отдельную менюшку
+- const footerNavFirst = [{ title: "Latest Posts", link: "#" }, {title: "Popular Posts", link: "#" }, ];
+- const footerNavSecond = [{ title: "Search", link: "#" }, {title: "Contact Information", link: "#" }, ];
+- const footerNavThird = [{ title: "Privacy Policy", link: "#" }, {title: "Terms of Use", link: "#" }, ];
+//- Этот способ лучше для реально большой навигации, примерно на пунктов 12. Тогда возможно удобнее описать это все в переменной и вызвать миксин, который сделает обход по такому массиву.
+footer
+    .footer
+        .container
+            .row
+                .col-3 
+                    +footer-nav(footerNavFirst)
+                .col-3 
+                    +footer-nav(footerNavSecond)
+                .col-3 
+                    +footer-nav(footerNavThird)
+                .col-3 
+                    include ./social-icons.pug
+
+    .copyright
+        .container
+            .copyright__text © Copyright 2019. All rights reserved.
